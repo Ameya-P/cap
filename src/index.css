@@ -24,6 +24,11 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  font-size: 2em;
+  text-align: center;
+}
+
 .whole-page, .form-container {
   display: flex;
   flex-direction: column;
@@ -95,23 +100,99 @@ p {
   font-size: 1.2em;
 }
 
+/* From Uiverse.io by Voxybuns */ 
 button {
-  border: 8px solid #3f3c3c;
-  font-family: "Lexend";
-  
-  color: #3f3c3c;
-  background-color: #F3EFDF;
-  
-  border-radius: 50px;
-  padding: 20px;
-  font-size: 2em;
+  /* Variables */
+  --button_radius: 0.75em;
+  --button_color: #F3EFDF;
+  --button_outline_color: #3f3c3c;
 
-  transition: background-color 0.3s ease;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: "Lexend";
+
+  border: none;
+  cursor: pointer;
+  border-radius: var(--button_radius);
+  background: var(--button_outline_color);
 }
 
-button:hover {
+.button_top {
+  display: block;
+
+  box-sizing: border-box;
+  border: 8px solid var(--button_outline_color);
+  border-radius: var(--button_radius);
+  padding: 0.75em 1.5em;
+
+  background: var(--button_color);
+  color: var(--button_outline_color);
+
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
+}
+
+button:hover .button_top {
+  /* Pull the button upwards when hovered */
+  transform: translateY(-0.33em);
+}
+
+button:active .button_top {
+  /* Push the button downwards when pressed */
+  transform: translateY(0);
+}
+
+
+.container {
   background-color: #3f3c3c;
   color: #F3EFDF;
-  
+
+  border-radius: 50px;
+  padding: 40px;
+  box-shadow: 0 5px 10px rgba(142, 140, 140, 0.05), 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #3f3c3c;
+  color: #F3EFDF;
+
+  min-height: 15em;
+  border-radius: 50px;
+  padding: 40px;
+  box-shadow: 0 5px 10px rgba(142, 140, 140, 0.05), 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.screenshot {
+  max-width: 100%;
+  max-height: 100%;
+  flex-shrink: 1; /* allows the image to shrink if needed */
+  height: auto;
+
+  border-radius: 20px;
+}
+
+.big-paragraph {
+  font-size: 2em;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.galleryScreenshot {
+  height: 200px;
+  width: auto; 
+
+  border-radius: 10px;
+}
+
+.quota {
+  margin: 10px;
+  color: #F3EFDF;
+}
